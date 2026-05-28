@@ -1,7 +1,13 @@
+import sys
+from pathlib import Path
+
 import pygame as pg
 
+sys.path.insert(0, str(Path(__file__).parent / "src"))
+
 def main():
-    scr = pg.Surface((800, 600))
+    scr = pg.display.set_mode((1100, 800))
+    pg.display.set_caption("Trig Trainer")
     clock = pg.time.Clock()
 
     while True:
