@@ -1,5 +1,7 @@
 import pygame as pg
 
+from .asset_manager import Assets
+
 from .states import (
     StateID,
     State,
@@ -10,6 +12,8 @@ from .states import (
 class Game:
     def __init__(self) -> None:
         self.prev_keys = pg.key.get_pressed()
+        self.assets = Assets()
+
         self.states: dict[StateID, State] = {
             StateID.MENU: MenuState(game=self),
             StateID.GAME: GameState(game=self)

@@ -22,6 +22,7 @@ import pygame as pg
 sys.path.insert(0, str(Path(__file__).parent / "src"))
 
 from trig_trainer.trainer import TrigTrainer
+from trig_trainer.constants import FPS
 
 def main():
     pg.init()
@@ -37,7 +38,7 @@ def main():
     while running:
         keys = pg.key.get_pressed()
         events = pg.event.get()
-        dt_s = clock.tick(60) / 1_000
+        dt_s = clock.tick(FPS) / 1_000
         t.game.take_input(keys=keys, events=events, dt_s=dt_s)
 
         for event in events:
