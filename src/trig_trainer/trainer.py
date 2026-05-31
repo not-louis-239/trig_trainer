@@ -1,4 +1,8 @@
-from .states import StateID
+from .states.base import StateID
+from .game import Game
 
 class TrigTrainer:
-    pass
+    def __init__(self) -> None:
+        self.total_questions = 0
+        self.correct_questions = 0
+        self.game = Game()
